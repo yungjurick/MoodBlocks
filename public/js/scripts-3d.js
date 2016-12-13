@@ -11,7 +11,10 @@ $('body').append(renderer.domElement);
  
  // SCENE SETUP
 var scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2("black", 0.005);
+scene.fog = new THREE.FogExp2("red", 0.002);
+
+// Objectfog = new THREE.FogExp2("white", 0.005);
+
 
 // CAMERA SETUP
 var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 10000);
@@ -19,7 +22,7 @@ camera.position.y = 60;
 camera.position.z = 200;
 scene.add(camera);
 
-renderer.render(scene, camera);
+//renderer.render(scene, camera);
 
 var particles = new THREE.Geometry();
 
@@ -48,30 +51,42 @@ var GeoParticles = [];
 
 for (p = 0; p < 150; p++) {
     var particle = new THREE.Mesh(Geo,GeoMaterial);
-    particle.position.set(Math.random()*400-250,Math.random()*400-250,Math.random()*900-100);
+    particle.position.set(Math.random()*width-250, Math.random()*height-250, Math.random()*900-100);
     particle.rotation.y = Math.random() * 360;
     scene.add(particle);
     GeoParticles.push(particle);
 }
 
-console.log(scene);
+    console.log(GeoParticles[0]);
 
-function evolveGeo(d) {
+
+
+function changeGeo(d) {
+
+    //console.log(d);
+
     var sp = GeoParticles.length;
     while (sp--) {
         GeoParticles[sp].rotation.y += (d * 3);
         GeoParticles[sp].position.z += (d * 30);
         if (GeoParticles[sp].position.z >= 800) {
-            GeoParticles[sp].position.z = -200;
+            //console.log("Yes");
+            //console.log(sp);
+            GeoParticles[sp].position.z = -400;
+            // GeoParticles[sp].material.opacity = 0.01;
         }
+        // if (GeoParticles[sp].material.opacity <= 1) {
+        //     GeoParticles[sp].material.opacity += d/100;
+        
+        // GeoParticles[sp].material.fog = Objectfog;
     }
 }
 
 function animate() {
 
-    var delta = clock.getDelta();
-
     requestAnimationFrame(animate);
+
+    var delta = clock.getDelta();
 
     if (particleSystem.position.y <= -380 && scene.children[1].type == "Points") {
         particleSystem.position.y = 400;
@@ -80,7 +95,7 @@ function animate() {
         particleSystem.position.y -= delta*20;
     }
 
-    evolveGeo(delta);
+    changeGeo(delta);
     render();
 }
 

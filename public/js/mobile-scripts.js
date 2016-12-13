@@ -47,7 +47,7 @@ $(document).ready(function(){
 		$("#header3").fadeIn(1500);
 	});
 
-	$("#header").fadeIn(3000).delay(5000).fadeOut(1500, function(){
+	$("#header").fadeIn(3000).delay(1000).fadeOut(1500, function(){
 		$("#header2").fadeIn(1500);
 	});
 	

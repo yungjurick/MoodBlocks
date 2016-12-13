@@ -36,10 +36,12 @@ canvas {
 	display: none;
 }
 
-#two {
+#two h1 {
 	color: green;
+	font-size: 10vw;
 }
 
-#three {
+#three h1 {
 	color: red;
+	font-size: 10vw;
 }

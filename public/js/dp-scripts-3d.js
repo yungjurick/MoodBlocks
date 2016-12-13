@@ -9,7 +9,7 @@ function init() {
 
 	console.log("initialization started!");
 
-	renderer = new THREE.WebGLRenderer({});
+	renderer = new THREE.WebGLRenderer({ antialias: true });
 	renderer.setSize(width, height);
 	$('body').append(renderer.domElement);
 
@@ -48,6 +48,7 @@ function init() {
 		cube1.position.x = Math.random() * spread - spread/2;
 		cube1.position.y = Math.random() * spread - spread/2;
 		cube1.position.z = Math.random() * spread - spread/2;
+		cube1.rotation.z = Math.random();
 
 		cubeHolder.add(cube1);
 	}
@@ -68,6 +69,7 @@ function init() {
 		cube2.position.x = Math.random() * spread - spread/2;
 		cube2.position.y = Math.random() * spread - spread/2;
 		cube2.position.z = Math.random() * spread - spread/2;
+		cube2.rotation.z = Math.random();
 
 		cubeHolder.add(cube2);
 	}
@@ -108,14 +110,14 @@ function init() {
 	vblurPass.uniforms['v'].value = 0.4 / height*3;
 
 	dotMatrixPass.uniforms["spacing"].value = 12.0;
-	dotMatrixPass.uniforms["size"].value = Math.pow(0.2, 2);
-	dotMatrixPass.uniforms["blur"].value = Math.pow(3.0*2, 2);
+	dotMatrixPass.uniforms["size"].value = Math.pow(0.1, 2);
+	dotMatrixPass.uniforms["blur"].value = Math.pow(2.0*2, 2);
 	dotMatrixPass.uniforms["resolution"].value = new THREE.Vector2(window.innerWidth,window.innerHeight);
 
 	blendPass = new THREE.ShaderPass(THREE.AdditiveBlendShader);
 	blendPass.uniforms['tBase'].value = dotsComposer.renderTarget1;
 	blendPass.uniforms['tAdd'].value = glowComposer.renderTarget1;
-	blendPass.uniforms['amount'].value = 2.0;
+	blendPass.uniforms['amount'].value = 1.2;
 
 	blendComposer = new THREE.EffectComposer(renderer, renderTarget);
 	blendComposer.addPass(blendPass);
