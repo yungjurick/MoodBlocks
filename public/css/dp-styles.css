@@ -1,0 +1,45 @@
+@font-face {
+	font-family: bonveno;
+	src: url(Bonveno.otf);
+}
+
+body {
+	display: none;
+	font-family: bonveno;
+	overflow: hidden;
+	background-color: black;
+}
+
+.container-fluid {
+	position: relative;
+	height: 100vh;
+	color: white;
+	/*background-color: black;*/
+}
+
+.row {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -20;
+	background-color: transparent;
+}
+
+#two, #three, #four, #five {
+	display: none;
+}
+
+#two {
+	color: green;
+}
+
+#three {
+	color: red;
+}

@@ -1,0 +1,82 @@
+@font-face {
+	font-family: bonveno;
+	src: url(Bonveno.otf);
+}
+
+body {
+	font-family: bonveno;
+	overflow: hidden;
+	background-color: black;
+}
+
+.container-fluid {
+	position: relative;
+	height: 100vh;
+}
+
+h1 {
+	font-size: 7vw;
+	color: white;
+}
+
+h2 {
+	color: white;
+	font-size: 2vmin;
+	margin-top: 8vh;
+	margin-bottom: 8vh;
+}
+
+h3 {
+	margin-top: 5vh;
+	font-size: 1.5vw;
+	color: white;
+}
+
+.row {
+	/*display: none;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+#header, #header2, #header3 {
+	display: none;
+}
+
+.header-ending {
+	display: inline-block;
+	transform: translateY(20%);
+}
+
+.header-start {
+	font-size: 6vw;
+	display: inline-block;
+	transform: translateY(-30%);
+}
+
+.btn-default {
+	color: white;
+	font-size: 4vmin;
+	display: block;
+	position: relative;
+	width: 30vw;
+	height: 10vh;
+	/*transform: translate(18.5vw, -5vh);*/
+	border-style: solid;
+	border-width: 5px;
+	background-color: transparent;
+	transition: 0.5s;
+
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#happy-button {
+	border-color: green;
+}
+
+#sad-button {
+	border-color: red;
+}

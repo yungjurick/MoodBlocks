@@ -1,0 +1,96 @@
+@font-face {
+	font-family: bonveno;
+	src: url(Bonveno.otf);
+}
+
+body {
+	font-family: bonveno;
+	overflow: hidden;
+	background-color: black;
+}
+
+.container-fluid {
+	position: relative;
+	height: 100vh;
+}
+
+h1 {
+	font-size: 7vw;
+	color: white;
+}
+
+h2 {
+	color: white;
+	font-size: 2vw;
+	transform: translateX(1.2vw);
+}
+
+h3 {
+	margin-top: 5vh;
+	font-size: 1.5vw;
+	color: white;
+}
+
+.row {
+	/*display: none;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+#header2 {
+	display: none;
+	top: 55%;
+	right: 5%;
+	transform: translateY(-45%);
+}
+
+#myName, #title, #header2, #info {
+	opacity: 0;
+}
+
+.header-ending {
+	display: inline-block;
+	transform: translateY(20%);
+}
+
+.header-start {
+	font-size: 6vw;
+	display: inline-block;
+	transform: translateY(-30%);
+}
+
+.device-img {
+	opacity: 0;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 69.5%;
+	transform: translateX(-31.5%);
+	width: 40vw;
+	height: 50vh;
+}
+
+.btn-default {
+	color: white;
+	font-size: 2vmin;
+	display: block;
+	position: relative;
+	width: 20vw;
+	height: 7vh;
+	transform: translate(18.5vw, -5vh);
+	border-style: solid;
+	border-color: white;
+	border-width: 5px;
+	background-color: transparent;
+	transition: 0.5s;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -20;
+}

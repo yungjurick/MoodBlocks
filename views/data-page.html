@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Emotions - MoodBlocks</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/dp-styles.css">
+  </head>
+
+  <body>
+    <audio id="audio-file">
+      <source src="1.mp3" type='audio/mpeg; codecs="mp3"'>
+    </audio>
+    
+    <div class="container-fluid">
+      <div class="row" id="one">
+        <h1>How do you feel right now?</h1>
+      </div>
+
+      <div class="row" id="two">
+        <h1 class="happy">Happy?</h1>
+      </div>
+
+      <div class="row" id="three">
+        <h1 class="sad">Sad?</h1>
+      </div>
+
+      <div class="row" id="four">
+        <h1 class="text-center">Or, are you curious about what other people are feeling?</h1>
+      </div>
+      
+      <div class="row" id="five">
+        <h1>Let's see it in blocks. Shall we?</h1>
+      </div>
+    </div>
+
+    <script>
+      var page = '<%=page%>';
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/build/three.js"></script>
+    <script src="js/build/bootstrap.min.js"></script>
+
+    <!-- THREE.JS = Post-Processing JS Libs -->
+    <script src="js/postprocessing/EffectComposer.js"></script>
+    <script src="js/postprocessing/RenderPass.js"></script>
+    <script src="js/postprocessing/ShaderPass.js"></script>
+    <script src="js/postprocessing/MaskPass.js"></script>
+
+    <!-- THREE.JS = Shader JS Libs -->
+    <script src="js/shaders/CopyShader.js"></script>
+    <script src="js/shaders/VerticalBlurShader.js"></script>
+    <script src="js/shaders/HorizontalBlurShader.js"></script>
+    <script src="js/shaders/DotMatrixShader.js"></script>
+    <script src="js/shaders/AdditiveBlendShader.js"></script>
+
+
+    <script src="js/dp-scripts.js"></script>
+    <script src="js/dp-scripts-3d.js"></script>
+  </body>
+</html>
