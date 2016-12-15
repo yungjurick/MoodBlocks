@@ -22,6 +22,7 @@ $(document).ready(function(){
 						hideFunction("#header", 2500);
 						showFunction("#header2", 2000);
 						showFunction(".device-img", 2000);
+						showFunction("#about-id", 2500);
 						$("#header2").animate({
 							opacity: 1
 							}, {
@@ -43,6 +44,14 @@ $(document).ready(function(){
 
 			$('body').fadeOut(1000, function(){
 				window.open('/dataPage','_self');
+			});
+		});
+
+		$("#about-id").click(function(event){
+			event.preventDefault();
+
+			$('body').fadeOut(1000, function(){
+				window.open('/about','_self');
 			});
 		});
 	};

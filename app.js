@@ -54,6 +54,10 @@ app.get("/mobile-page", function(req, res){
 	res.render('index-mobile');
 });
 
+app.get("/about", function(req, res){
+	res.render('about');
+});
+
 
 //SAVE an object to the db
 app.post("/save", function(req,res){

@@ -6,7 +6,7 @@
 body {
 	display: none;
 	font-family: bonveno;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background-color: black;
 }
 
@@ -14,14 +14,13 @@ body {
 	position: relative;
 	height: 100vh;
 	color: white;
-	/*background-color: black;*/
 }
 
 .row {
 	position: absolute;
 	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	width: 100vw;
+	transform: translateY( -50%);
 }
 
 canvas {
@@ -44,4 +43,29 @@ canvas {
 #three h1 {
 	color: red;
 	font-size: 10vw;
+}
+
+.sad {
+	color: red;
+}
+
+.happy {
+	color: green;
+}
+
+#five-header {
+	margin: 6vh 6vh;
+}
+
+h3 {
+	margin-top: 6vh;
+}
+
+#info-page {
+	display: none;
+	background-color: white;
+}
+
+#info-page {
+	color: black;
 }

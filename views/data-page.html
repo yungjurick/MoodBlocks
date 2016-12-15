@@ -17,30 +17,42 @@
     </audio>
     
     <div class="container-fluid">
-      <div class="row" id="one">
+      <div class="row text-center" id="one">
         <h1>How do you feel right now?</h1>
       </div>
 
       <div class="row" id="two">
-        <h1 class="happy">Happy?</h1>
+        <h1 class="happy text-center">Happy?</h1>
       </div>
 
       <div class="row" id="three">
-        <h1 class="sad">Sad?</h1>
+        <h1 class="sad text-center">Sad?</h1>
       </div>
 
       <div class="row" id="four">
-        <h1 class="text-center">Or, are you curious about what other people are feeling?</h1>
+        <h1 class="text-center">Are you curious about what other people are feeling?</h1>
       </div>
       
       <div class="row" id="five">
-        <h1>Let's see it in blocks. Shall we?</h1>
+        <h1 class="text-center" id="five-header">Let's see it in blocks. Shall we?</h1>
+        <h1 class="text-center">The <span class="sad">Red Cubes</span> indicate people that are <span class="sad">SAD</span></h1>
+        <h1 class="text-center">The <span class="happy">Green Cubes</span> indicate people that are <span class="happy">HAPPY</span></h1>
+        <h3 class="text-center">The results have been computed with inputs from users through mobile devices</h3>
+        <h3 class="text-center">Don't worry, they are anonymous</h3>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="info-page">
+      <div class="row">
+        <h1 class="text-center">Until now..</h2>
+        <h2 class="text-center"><span id="happy-val"></span> people said they are happy.</h2>
+        <h2 class="text-center"><span id="sad-val"></span> people said they are sad.</h2>
       </div>
     </div>
 
     <script>
       var page = '<%=page%>';
-      setInterval("window.open('/','_self')", 70000);
+      // setInterval("window.open('/','_self')", 70000);
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

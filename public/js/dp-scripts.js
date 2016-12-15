@@ -13,6 +13,18 @@ function countEmotions(object){
 
 	console.log("Happy: " + countHappy);
 	console.log("Sad: " + countSad);
+
+	$('#happy-val').html(countHappy);
+	$('#happy-val').css({
+		"font-size": "20vmin",
+		"color": "green"
+		});
+
+	$('#sad-val').html(countSad);
+	$('#sad-val').css({
+		"font-size": "20vmin",
+		"color": "red"
+		});
 }
 
 function getAllData(){
@@ -44,15 +56,17 @@ $(document).ready(function(){
 
 		getAllData();
 
-		$('body').fadeIn(3000);
+		$('body').fadeIn(2000);
 
-		$("#one").fadeIn(1500).delay(3000).fadeOut(1500, function(){
-			$("#two").fadeIn(1500).delay(3000).fadeOut(1500, function(){
-				$("#three").fadeIn(1500).delay(3000).fadeOut(1500, function(){
-					$("#four").fadeIn(1500).delay(3000).fadeOut(1500, function(){
+		$("#one").fadeIn(1500).delay(2000).fadeOut(1500, function(){
+			$("#two").fadeIn(1500).delay(2000).fadeOut(1500, function(){
+				$("#three").fadeIn(1500).delay(2000).fadeOut(1500, function(){
+					$("#four").fadeIn(1500).delay(2000).fadeOut(1500, function(){
 						$("#five").fadeIn(1500).delay(3000).fadeOut(1500, function(){
 							init();
 							animate();
+							$('#q').fadeIn(1000);
+							$('#info-page').fadeIn(1000);
 						});
 					});
 				});
@@ -60,4 +74,10 @@ $(document).ready(function(){
 		});
 
 	}
+
+	// $('#q-mark').on('click', function(event){
+	// 	$('html, body').animate({
+	// 		scrollTop: $()
+	// 	})
+	// }))
 });

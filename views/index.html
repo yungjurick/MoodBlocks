@@ -15,8 +15,13 @@
     <audio autoplay loop>
       <source src="field_2.mp3" type="audio/mpeg">
     </audio>
-    
+
     <div class="container-fluid">
+      
+      <div class="about" id="about-id">
+        <h3>About</h3>
+      </div>
+
       <div class="row" id="header">
         <h1 class="text-center" id="title"><span class="header-start">e</span>MOTION<span class="header-ending">s</span></h1>
         <h3 class="text-center" id="myName">- YUNG JU RICK KIM -</h3>
@@ -25,19 +30,18 @@
 
       <div class="row" id="header2">
           <button type="button" class="btn btn-default" id="proceed-button">PROCEED</button>
-          <h2 class="text-right">ACCESS THROUGH YOUR MOBILE DEVICE</h2>
-          <h2 class="text-right">TO INPUT YOUR EMOTION TO THE WORK</h2>
+          <h2 class="text-center" id="url-text">emotionsmoodblocks.herokuapp.com</h2>
+          <h2 class="text-center">ACCESS THE URL WITH YOUR MOBILE DEVICE</h2>
+          <h2 class="text-center">TO INPUT YOUR EMOTION TO THE WORK</h2>
       </div>
 
       <img src="mobile-device_2.png" class="device-img"/>
-
     </div>
-
     <script>
       var page = '<%=page%>';
 
       // For Exhibition
-      setInterval('window.location.reload()', 40000);
+      // setInterval('window.location.reload()', 40000);
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

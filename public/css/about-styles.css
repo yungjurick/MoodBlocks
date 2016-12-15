@@ -1,0 +1,14 @@
+@font-face {
+	font-family: bonveno;
+	src: url(Bonveno.otf);
+}
+
+body {
+	font-family: bonveno;
+	background-color: gray;
+}
+
+h3 {
+	font-size: 1.5vw;
+	line-height: 3vw;
+}
