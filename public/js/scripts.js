@@ -6,8 +6,14 @@ function hideFunction(id, param) {
 	$(id).fadeOut(param);
 }
 
+var audioFile_index = document.getElementById('audio-file-index');
+audioFile_index.loop = true;
+
 $(document).ready(function(){
 	if (page === 'good to go!'){
+
+		audioFile_index.play();
+
 		$("#title").animate({
 			opacity: 1
 			}, {

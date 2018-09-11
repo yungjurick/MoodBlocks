@@ -46,13 +46,13 @@ function getAllData(){
 	});
 }
 
-var audio1 = document.getElementById('audio-file');
-audio1.loop = true;
+var audioFile_dp = document.getElementById('audio-file-dp');
+audioFile_dp.loop = true;
 
 $(document).ready(function(){
 	if (page === 'good to go!') {
 
-		audio1.play();
+		audioFile_dp.play();
 
 		getAllData();
 

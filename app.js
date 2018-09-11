@@ -22,10 +22,10 @@ app.use(bodyParser.json());
 /*---------------
 //DATABASE CONFIG
 ----------------*/
-var cloudant_USER = 'yjk394';
+var cloudant_USER = 'eea7206c-d25d-42af-a6c2-50af642e73cd-bluemix';
 var cloudant_DB = 'emotions';
-var cloudant_KEY = 'arenchatelliffeessylecti';
-var cloudant_PASSWORD = '4e4fea6c29d9d79ee69fc9362b8c5bd63f6b82ac';
+var cloudant_KEY = 'proomentleectonliverepre';
+var cloudant_PASSWORD = 'a46d248029d60be182bab517ae41c8024ece4fc7';
 
 var cloudant_URL = "https://" + cloudant_USER + ".cloudant.com/" + cloudant_DB;
 
@@ -101,6 +101,7 @@ app.get("/api/all", function(req,res){
 		json: true
 	},
 	function (error, response, body){
+		console.log(body);
 		var theRows = body.rows;
 		//Send the data
 		res.json(theRows);
