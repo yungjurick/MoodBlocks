@@ -5,6 +5,10 @@ var bodyParser = require('body-parser');
 var _ = require('underscore');
 var MobileDetect = require('mobile-detect');
 
+// Routing for API keys saved in your PC
+// I've saved my Cloudant Credentials in my own Mac as a separate file
+import credConfig from '../../Credentials/apiKeys.';
+
 //Create an 'express' object
 var app = express();
 
@@ -22,12 +26,10 @@ app.use(bodyParser.json());
 /*---------------
 //DATABASE CONFIG
 ----------------*/
-var cloudant_USER = 'eea7206c-d25d-42af-a6c2-50af642e73cd-bluemix';
-var cloudant_DB = 'emotions';
-var cloudant_KEY = 'proomentleectonliverepre';
-var cloudant_PASSWORD = 'a46d248029d60be182bab517ae41c8024ece4fc7';
+// You would need the following to run this app locally :
+//  cloudant username, cloudant DB, cloudant API Key, cloudant PW
 
-var cloudant_URL = "https://" + cloudant_USER + ".cloudant.com/" + cloudant_DB;
+var cloudant_URL = "https://" + credConfig.cloudant_USER + ".cloudant.com/" + credConfig.cloudant_DB;
 
 /*-----
 ROUTES
@@ -69,8 +71,8 @@ app.post("/save", function(req,res){
 	Request.post({
 		url: cloudant_URL,
 		auth: {
-			user: cloudant_KEY,
-			pass: cloudant_PASSWORD
+			user: credConfig.cloudant_KEY,
+			pass: credConfig.cloudant_PASSWORD
 		},
 		json: true,
 		body: data
@@ -95,8 +97,8 @@ app.get("/api/all", function(req,res){
 	Request.get({
 		url: cloudant_URL+"/_all_docs?include_docs=true",
 		auth: {
-			user: cloudant_KEY,
-			pass: cloudant_PASSWORD
+			user: credConfig.cloudant_KEY,
+			pass: credConfig.cloudant_PASSWORD
 		},
 		json: true
 	},
